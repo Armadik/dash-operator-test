@@ -4,7 +4,7 @@
 # Build image:
 # >> docker build -t dash_test .
 #
-# Run container:
+# Run container: 
 # >> docker run -it -p 8050:8050  --name test_nginx18 <images name>
 ###############################################################################
 FROM registry.redhat.io/rhel8/python-38
