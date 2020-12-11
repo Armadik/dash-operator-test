@@ -7,7 +7,7 @@
 # Run container: 
 # >> docker run -it -p 8050:8050  --name test_nginx18 <images name>
 ###############################################################################
-FROM registry.redhat.io/rhel8/python-38
+FROM registry.redhat.io/ubi8/python-38:1-41
 LABEL   maintainer="Test Testovich"
 COPY . /usr/src/app/
 
