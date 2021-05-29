@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="4a061b2e-3748-4e51-a6fc-c0ae630aea1e" name="RemoteServer-YC">
+        <fileTransfer rootFolder="/home/micha" accessType="SFTP" host="84.201.141.130" port="22" sshConfigId="9c4dfdb5-48c1-4c83-a1be-2f1331cc9d77" sshConfig="micha@84.201.141.130:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
