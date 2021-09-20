@@ -23,16 +23,16 @@ spec:
         control-plane: controller-manager
     spec:
       containers:
-      - image: controller:latest
-        args:
-        - "--enable-leader-election"
-        - "--leader-election-id=dash-operator"
-        name: manager
-        resources:
-          limits:
-            cpu: 100m
-            memory: 90Mi
-          requests:
-            cpu: 100m
-            memory: 60Mi
+        - image: controller:latest
+          args:
+            - "--enable-leader-election"
+            - "--leader-election-id=dash-operator"
+          name: manager
+          resources:
+            limits:
+              cpu: 100m
+              memory: 90Mi
+            requests:
+              cpu: 100m
+              memory: 60Mi
       terminationGracePeriodSeconds: 10

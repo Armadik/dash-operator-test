@@ -4,17 +4,17 @@ kind: ClusterRole
 metadata:
   name: dash-viewer-role
 rules:
-- apiGroups:
-  - demo.my.domain
-  resources:
-  - dashes
-  verbs:
-  - get
-  - list
-  - watch
-- apiGroups:
-  - demo.my.domain
-  resources:
-  - dashes/status
-  verbs:
-  - get
+  - apiGroups:
+      - demo.my.domain
+    resources:
+      - dashes
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - demo.my.domain
+    resources:
+      - dashes/status
+    verbs:
+      - get

@@ -4,21 +4,21 @@ kind: ClusterRole
 metadata:
   name: dash-editor-role
 rules:
-- apiGroups:
-  - demo.my.domain
-  resources:
-  - dashes
-  verbs:
-  - create
-  - delete
-  - get
-  - list
-  - patch
-  - update
-  - watch
-- apiGroups:
-  - demo.my.domain
-  resources:
-  - dashes/status
-  verbs:
-  - get
+  - apiGroups:
+      - demo.my.domain
+    resources:
+      - dashes
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+  - apiGroups:
+      - demo.my.domain
+    resources:
+      - dashes/status
+    verbs:
+      - get
