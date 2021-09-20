@@ -8,6 +8,12 @@ env:
   global:
     - OPERATOR_NAME=dash-operator
 
+services:
+  - docker
+
+notifications:
+  email: false
+
 stages:
   - compile
   - name: push
