@@ -1,0 +1,6 @@
+# Use the 'create api' subcommand to add watches to this file.
+- group: demo.my.domain
+  version: v1
+  kind: Dash
+  chart: helm-charts/dash
+# +kubebuilder:scaffold:watch
