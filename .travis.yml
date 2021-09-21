@@ -29,4 +29,7 @@ jobs:
         - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
         - export TAG=$(git rev-parse --short ${TRAVIS_COMMIT})
         - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        - make docker-build TAG=$TAG
         - make docker-push TAG=$TAG
+        - docker tag armadik/dash-operator:$TAG armadik/dash-operator:$BRANCH
+        - docker push armadik/dash-operator:$BRANCH
