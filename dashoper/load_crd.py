@@ -1,9 +1,9 @@
 import kubernetes
 
-from dash-operator.const import CRD_GROUP, CRD_VERSION, CRD_PLURAL
+from dashoper.const import CRD_GROUP, CRD_VERSION, CRD_PLURAL
 
 __all__ = [
-    'load_crd',
+    "load_crd",
 ]
 
 
@@ -22,4 +22,4 @@ def load_crd(namespace, name):
         CRD_PLURAL,
         name,
     )
-    return {x: crd[x] for x in ('ruleType', 'selector', 'namespace')}
+    return {x: crd[x] for x in ("ruleType", "selector", "namespace")}

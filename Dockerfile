@@ -1,8 +1,8 @@
 # Build the manager binary
-FROM python:3.7.3-alpine3.9
+FROM python:3.8-alpine
 
 ADD . /app
 
 RUN pip3 install /app
 
-ENTRYPOINT ["dash-operator"]
+ENTRYPOINT ["dashoper"]

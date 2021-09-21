@@ -3,16 +3,14 @@ from os import getenv
 
 import kubernetes
 
-from dash-operator.load_crd import load_crd
-from dash-operator.operator import handle
+from dashoper.load_crd import load_crd
+from dashoper.operator import handle
 
 
 try:
     kubernetes = kubernetes.config.load_incluster_config()
 except kubernetes.config.config_exception.ConfigException:
-    raise RuntimeError(
-        'Can not read Kubernetes cluster configuration.'
-    )
+    raise RuntimeError("Can not read Kubernetes cluster configuration.")
 
 
 def main():
@@ -22,21 +20,18 @@ def main():
     environment variables and CRD. Then, retrieving and processing
     of Kubernetes events are initiated.
     """
-    parser = ArgumentParser(
-        description='Copyrator - copy operator.',
-        prog='copyrator'
+    parser = ArgumentParser(description="Copyrator - copy operator.", prog="copyrator")
+    parser.add_argument(
+        "--namespace",
+        type=str,
+        default=getenv("NAMESPACE", "default"),
+        help="Operator Namespace (or ${NAMESPACE}), default: default",
     )
     parser.add_argument(
-        '--namespace',
+        "--rule-name",
         type=str,
-        default=getenv('NAMESPACE', 'default'),
-        help='Operator Namespace (or ${NAMESPACE}), default: default'
-    )
-    parser.add_argument(
-        '--rule-name',
-        type=str,
-        default=getenv('RULE_NAME', 'main-rule'),
-        help='CRD Name (or ${RULE_NAME}), default: main-rule'
+        default=getenv("RULE_NAME", "main-rule"),
+        help="CRD Name (or ${RULE_NAME}), default: main-rule",
     )
 
     args = parser.parse_args()
@@ -48,4 +43,4 @@ def main():
         pass
 
     except Exception as err:
-        raise RuntimeError('Oh no! I am dying...') from err
+        raise RuntimeError("Oh no! I am dying...") from err

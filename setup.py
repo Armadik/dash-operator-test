@@ -8,7 +8,7 @@ if version_info[:2] < (3,8):
     )
 
 
-_NAME = 'dash-operator'
+_NAME = 'dashoper'
 setup(
     name=_NAME,
     version='0.0.1',
@@ -21,7 +21,7 @@ setup(
     author='Armadik',
     include_package_data=True,
     install_requires=[
-        'kubernetes==17.17.0',
+        'kubernetes==18.20.0',
     ],
     entry_points={
         'console_scripts': [
