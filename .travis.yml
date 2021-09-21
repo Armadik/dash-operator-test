@@ -30,4 +30,3 @@ jobs:
         - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         - make docker-build TAG=$TAG
         - make docker-push TAG=$TAG
-        - docker tag armadik/dash-operator:$TAG armadik/dash-operator:$BRANCH
